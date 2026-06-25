@@ -1,0 +1,22 @@
+# workflow
+# should have name
+name: Hello
+
+on:
+  workflow_dispatch: 
+# Jobs tells the workflow sould do, there can be one or more than one jobs, hence we write jobs
+#
+# should beinside the workflow
+jobs:
+  Say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello to everyone
+        run: echo "hello dosto"
+        
+
+# steps
+# Should be inside the jobs
+
+# Action
+# should be inside the steps
