@@ -8,7 +8,7 @@ on:
 #
 # should beinside the workflow
 jobs:
-  Say-hello:
+  say-hello:
     runs-on: ubuntu-latest
     steps:
       - name: Say hello to everyone
