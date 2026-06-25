@@ -1,4 +1,3 @@
-
 name: CICD
 
 on:
@@ -9,18 +8,21 @@ jobs:
     steps: 
       - name: Clone the code
         run: echo "Cloning the code"
-    build:
+  build:
+      needs: [code]
       runs-on: ubuntu-latest
       steps: 
         - name: Build using Docker
           run: echo "Building using the Docker"
-    test:
+  test:
+      needs: [build]
       runs-on: ubuntu-latest
-    steps:
+      steps:
       - name: Running test cases
         run: echo "Testing the app"
   
   deploy:
+    needs: [build,test]
     runs-on: ubuntu-latest
     steps:
       - name: Deploying on the machine
